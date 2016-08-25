@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- All other head content below -->
+    <title>Ambient</title>
+
+    <!-- Library CSS -->
+    <link href="{{ url_for('static', filename='lib/css/dc.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/css/reset.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/graphs.css') }}" rel="stylesheet"> 
+  </head>
+
+  <body>
+    <div class = "container">
+        <div class = "correlation wrapper">
+            <div class = "tabs">
+                <ul class = "tab-links">
+                    <li id = "tab-link-pt" class = "tab-link active"><a href = "#prediction-tool">Prediction Tool</a></li>
+                </ul>
+
+                <div class = "tab-content">
+                    <div id = "prediction-tool" class = "tab active">
+                        <div class = "prediction-chart">
+                        </div>
+
+                        <div class = "prediction-options">
+                            <input type = "range" class = "prediction-option-range" name = "aqi" min = 0 max = 272 value = 136></input>
+                            <input type = "text" class = "prediction-option-text" value = 136></input>
+                            <label class = "prediction-option-label">AQI</label>
+                            <input type = "range" class = "prediction-option-range" name = "pm2_5" min = 0 max = 224 value = 112></input>
+                            <input type = "text" class = "prediction-option-text" value = 112></input>
+                            <label class = "prediction-option-label">PM2.5</label>
+                            <input type = "range" class = "prediction-option-range" name = "pm10" min = 0 max = 283 value = 142></input>
+                            <input type = "text" class = "prediction-option-text" value = 142></input>
+                            <label class = "prediction-option-label">PM10</label>
+                            <input type = "range" class = "prediction-option-range" name = "so2" min = 0 max = 36 value = 18></input>
+                            <input type = "text" class = "prediction-option-text" value = 18></input>
+                            <label class = "prediction-option-label">SO2</label>
+                            <input type = "range" class = "prediction-option-range" name = "no2" min = 0 max = 110 value = 55></input>
+                            <input type = "text" class = "prediction-option-text" value = 55></input>
+                            <label class = "prediction-option-label">NO2</label>
+                            <input type = "range" class = "prediction-option-range" name = "co" min = 0.00 max = 1.83 value = 0.92 step = 0.01></input>
+                            <input type = "text" class = "prediction-option-text" value = 0.92></input>
+                            <label class = "prediction-option-label">CO</label>
+                            <input type = "range" class = "prediction-option-range" name = "o3" min = 0 max = 124 value = 62></input>
+                            <input type = "text" class = "prediction-option-text" value = 62></input>
+                            <label class = "prediction-option-label">O3</label>
+                            <a href = "javascript:void();" id = "submit-prediction-options">Get Patient Estimates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "container">
+        <div class = "settings wrapper">
+            <p id = "settings-title">Control Panel</p>
+            <div class = "settings-content">
+                    <h1>Add Filters</h1>
+                    <div class = "remaining-filters air">
+                        <p>Available Pollutants</p>
+                    </div>
+                    <div class = "remaining-filters disease">
+                        <p>Available Diseases</p>
+                    </div>
+                    <br>
+                    <h1>Selected Filters</h1>
+                    <div class = "selected-filters">
+                    </div>
+                    <button class = "submit-filters">Apply</button>
+            </div>
+            <div class = "map">
+            </div>
+        </div>
+    </div>
+
+    <div class = "container">
+        <div class = "overview wrapper">
+            <div class = "overview-tabs">
+                <ul class = "overview-tab-links">
+                    <li id = "tab-link-comparison-chart" class = "overview-tab-link active"><a href = "#comparison-chart"><i class="fa fa-arrows fa-fw"></i></a></li>
+                    <li id = "tab-link-area-chart" class = "overview-tab-link null"><a href = "#area-chart"><i class="fa fa-area-chart fa-fw"></i></a></li>
+                    <li id = "tab-link-bar-chart" class = "overview-tab-link null"><a href = "#bar-chart"><i class="fa fa-bar-chart fa-fw"></i></a></li>
+                </ul>
+
+                <div class = "overview-tab-content">
+                    <div id = "comparison-chart" class = "overview-tab active">
+                        <!--Comparison Chart Here-->
+                    </div>
+
+                    <div id = "area-chart" class = "overview-tab">
+                        <div id = "chart-area"></div>
+                    </div>
+
+                    <div id = "bar-chart" class = "overview-tab">
+                        <div id = "chart-day-of-week"></div>
+                        <div id = "chart-season"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy;2016 Xinhang Team. Singapore University of Technology and Design.
+    </footer>
+                    
+
+    <!-- Library JS
+    ================================================== -->
+    <script src = "{{ url_for('static', filename='lib/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/js/crossfilter.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/js/d3.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/js/topojson.v1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/js/dc.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/js/d3-queue.min.js') }}"></script>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/graphs.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  </body>
+</html>

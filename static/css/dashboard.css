@@ -1,0 +1,314 @@
+@font-face {
+	font-family: Kreon;
+	src: url(fonts/Kreon-Regular.ttf);
+} 
+
+body {
+	font-family: Kreon;
+	color:#333333;
+	background: #333333;
+	margin:0;
+	max-width: 100%;
+}
+
+.wrapper {
+	margin: 5px;
+	margin-bottom: 0;
+	padding:10px;
+	overflow: hidden;
+}
+
+/*------ Correlation Analysis Section ----------*/
+.correlation {
+	width:73%;
+	/*width:910px;*/
+	float:left;
+	clear: right;
+	position: relative;
+	margin-right: 0;
+	top:-5px;
+	margin-bottom: -5px;
+	left:5px;
+}
+
+.tabs {
+	width:100%;
+	display:inline-block;
+}
+
+.tab-links:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+
+.tab-links li {
+	margin: 0;
+	float:left;
+	list-style: none;
+
+}
+
+.tab-links a {
+	padding: 5px 10px;
+	display: inline-block;
+	border-radius: 3px 3px 0px 0px;
+	background: #16B4BF;
+	font-size: 0.8em;
+	font-weight: 600;
+	color: #333333;
+	transition: all linear 0.15s;
+	text-decoration: none;
+}
+
+.tab-links a:hover {
+	background: #19C3CD;
+	text-decoration: none;
+}
+
+.tab-link.active a, .tab-link.active a:hover {
+	background: #ECECEC;
+}
+
+.tab-content {
+	padding: 15px;
+	border-radius: 3px;
+	box-shadow: -1px 1px 1px rgba(0,0,0,0.15);
+	background: #ECECEC;
+	position: relative;
+	top:-2px;
+	margin-bottom: -2px;
+	height:285px;
+}
+
+.tab {
+	display: none;
+}
+
+.tab.active {
+	display: block;
+}
+
+/*--Prediction Sections -----*/
+.prediction-options {
+	position: relative;
+	left:600px;
+	top:-310px;
+	width:300px;
+	margin-bottom: -310px;
+}
+
+.prediction-option-range {
+	display: inline-block;
+	width: 250px;
+	margin:5px;
+	margin-bottom: 0px;
+}
+
+.prediction-option-text {
+	width: 25px;
+	display: inline-block;
+	position: relative;
+	top:-5px;
+	margin-bottom: -5px;
+
+}
+.prediction-option-label {
+	display: block;
+	font-size: 0.5em;
+	position: relative;
+	left:10px;
+	margin-top:0;
+}
+
+#submit-prediction-options {
+	text-decoration: none;
+	color:#333333;
+	padding:5px 10px;
+	background-color: #c7e9b4;
+	border-radius: 3px;
+	position: relative;
+	top:10px;
+	left:60px;
+}
+
+
+/*---- Settings Section ------*/
+.settings {
+	position: relative;
+	right:5px;
+	top:3px;
+}
+
+#settings-title {
+	color:#D4B10A;
+	font-size: 0.8em;
+}
+
+.settings-content {
+	margin-top: 5px;
+	font-size: 0.6em;
+	padding: 15px;
+	border-radius: 3px;
+	box-shadow: -1px 1px 1px rgba(0,0,0,0.15);
+	background: #ECECEC;
+	height:380px;
+	margin-left: 0;
+}
+
+.settings-content h1 {
+	font-size: 1.3em;
+	text-align: center;
+}
+
+.submit-filters {
+	width: 100%;
+	padding: 5px 0;
+	margin: 5px 0;
+	z-index: 1;
+}
+
+/*--Parameters --*/
+.selected-filter-label {
+	position: absolute;
+	left:25px;
+	border-radius: 3px;
+	visibility: hidden;
+	display:block;
+	padding:5px 10px;
+	background: #272727;
+	color: #ECECEC;
+	z-index: 1;
+}
+
+.selected-filter {
+	background-color: #000000;
+	border-radius: 50px;
+	height:20px;
+	width:20px;
+}
+
+
+.selected-filters {
+	border: 1px solid #A0A0A0;
+	width: 90%;
+	height: 158px;
+/*	background: #272727;*/
+
+	margin:auto;
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+
+.remaining-filters {
+	width:100%;
+	text-align: left;
+	height:60px;
+}
+
+.remaining-filter {
+	display: inline-block;
+	background:#000000;
+	border-radius: 5px;
+	padding:5px 10px;
+	margin:2px;
+}
+
+/*---Map Section -----------------*/
+.map {
+	background: #ECECEC;
+	height:200px;
+	margin-top:5px;
+	border-radius: 3px;
+}
+
+/*----Overview Section ------------*/
+.overview {
+	width:73%;
+	/*width:910px;*/
+	float:left;
+	clear: right;
+	position:relative;
+	top:-315px;
+	margin-bottom: -315px;
+	left: 5px;
+}
+
+.overview-tabs {
+	width:100%;
+	display:block;
+}
+
+.overview-tab-links {
+	border-radius: 30px;
+	background: #272727;
+	display: block;
+	float:right;
+	padding:8px;
+}
+
+.overview-tab-links li {
+	list-style: none;
+	padding:5px 0px;
+}
+
+.overview-tab-links a {
+	text-decoration: none;
+	color:#ECECEC;
+	
+}
+
+.overview-tab-link.active a, .overview-tab-link.active a:hover {
+	color: #D4B10A;
+}
+
+.overview-tab-link.null a {
+	color:#444444;
+}
+
+.overview-tab-links:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+
+.overview-tab-content {
+	float:left;
+	width:92%;
+	padding: 15px;
+	border-radius: 3px;
+	box-shadow: -1px 1px 1px rgba(0,0,0,0.15);
+	background: #ECECEC;
+	position: relative;
+	top:-2px;
+	margin-bottom: -2px;
+	height:270px;
+}
+
+.overview-tab {
+	display: none;
+}
+
+.overview-tab.active {
+	display: block;
+}
+
+
+/*-- Footer Section ---------------------------------------------------------------*/
+footer {
+	color: #656565;
+	text-align: center;
+	font-size: 0.5em;
+	clear:both;
+	margin: 7px;
+
+}
+
+
+
+
+
+
+
+
+
